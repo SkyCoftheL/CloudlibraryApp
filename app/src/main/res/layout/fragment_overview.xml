@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.overview.OverviewFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/name_text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/overview_text_height"
+
+                android:text="@string/over_name" />
+
+            <TextView
+                android:id="@+id/email_text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/overview_text_height"
+                android:text="@string/over_email" />
+
+            <TextView
+                android:id="@+id/role_text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/overview_text_height"
+                android:text="@string/over_role" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/over_show_name_te"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/overview_text_height"
+                />
+
+            <TextView
+                android:id="@+id/over_show_email_te"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/overview_text_height"
+                />
+
+            <TextView
+                android:id="@+id/over_show_role_te"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/overview_text_height"
+                />
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:layout_margin="@dimen/overview_text_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/action_log_out"
+        android:id="@+id/log_out_btn"/>
+
+
+</LinearLayout>

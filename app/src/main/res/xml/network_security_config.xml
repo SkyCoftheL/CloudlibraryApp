@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config>
+        <domain includeSubdomains="true">baidu.com</domain>
+        <domain includeSubdomains="true">images.sunofbeaches.com</domain>
+        <domain-config cleartextTrafficPermitted="true">
+            <domain includeSubdomains="true">10.136.27.73</domain>
+            <domain includeSubdomains="true">10.136.20.0</domain>
+        </domain-config>
+    </domain-config>
+</network-security-config>
