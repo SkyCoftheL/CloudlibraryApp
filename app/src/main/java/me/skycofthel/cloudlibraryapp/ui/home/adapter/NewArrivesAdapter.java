@@ -43,6 +43,7 @@ public class NewArrivesAdapter extends ArrayAdapter<SelectNewBooks.DataDTO.RowsD
 
         SelectNewBooks.DataDTO.RowsDTO datum=data.get(position);
 
+
         booksId.add(datum.getId());
         bookList.add(datum.getName());
 
@@ -69,11 +70,12 @@ public class NewArrivesAdapter extends ArrayAdapter<SelectNewBooks.DataDTO.RowsD
     }
 
     public int getBooksId(int position){
-
         return booksId.get(position);
     }
 
     public String getBookName(int position){
         return bookList.get(position);
     }
+
+
 }

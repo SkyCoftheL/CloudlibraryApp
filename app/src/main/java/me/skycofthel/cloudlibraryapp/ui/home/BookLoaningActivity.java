@@ -186,6 +186,7 @@ public class BookLoaningActivity extends AppCompatActivity {
 
                         dataList.addAll(rows);
 
+                        adapter=null;
                         adapter = new NewArrivesAdapter(getApplicationContext(),R.layout.item_list,dataList);
 
 
@@ -246,12 +247,16 @@ public class BookLoaningActivity extends AppCompatActivity {
 
     private void performSearch(String query) {
         dataList.clear();
+
         networkManager = NetworkManager.getInstance(this);
 
         FormBody formBody=new FormBody.Builder()
                 .add("name", query)
                 .build();
         networkManager.sendPostRequest(Constants.CLOUD_LIBRARY_URL + Constants.CLOUD_LIBRARY_BOOK_URL + Constants.ACTION_SEARCH_API, formBody, new Callback() {
+
+
+
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 runOnUiThread(new Runnable() {
@@ -276,8 +281,10 @@ public class BookLoaningActivity extends AppCompatActivity {
                         List<SelectNewBooks.DataDTO.RowsDTO> rows = data.getRows();
 
                         dataList.addAll(rows);
+                        adapter=null;
+                        adapter=new NewArrivesAdapter(getApplicationContext(),R.layout.item_list,dataList);
+//                        NewArrivesAdapter adapter=new NewArrivesAdapter(getApplicationContext(),R.layout.item_list,dataList);
 
-                        NewArrivesAdapter adapter=new NewArrivesAdapter(getApplicationContext(),R.layout.item_list,dataList);
 
 
                         runOnUiThread(new Runnable() {

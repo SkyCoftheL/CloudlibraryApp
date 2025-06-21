@@ -87,13 +87,10 @@ public class LoginActivity extends AppCompatActivity {
                 String passwdStr = passwd.getText().toString();
                 String emailStr = username.getText().toString();
 
-                Log.d(TAG, "onClick: the username is " + username.getText().toString());
-                Log.d(TAG, "onClick: the password is " + passwd.getText().toString());
-
                 // 初始化网络管理器
                 NetworkManager networkManager = NetworkManager.getInstance(getApplicationContext());
 
-// 登录请求示例
+                // 登录请求
                 FormBody formBody = new FormBody.Builder()
                         .add("email", emailStr)
                         .add("password", passwdStr)
@@ -120,8 +117,6 @@ public class LoginActivity extends AppCompatActivity {
                             if (json != null) {
                                 Gson gson = new Gson();
                                 LoginBean loginBean = gson.fromJson(json, LoginBean.class);
-
-
 //                                提示是否成功
                                 runOnUiThread(new Runnable() {
                                     @Override
@@ -222,6 +217,8 @@ public class LoginActivity extends AppCompatActivity {
 //
             }
         });
+
+
 
 
     }
